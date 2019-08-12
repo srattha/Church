@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('home.index');
 });
+
+
+Route::get('/activities', function () {
+    return view('admin.activities.activities');
+});
+
+Route::get('/news', function () {
+	
+    return view('admin.adminNews.news');
+});
