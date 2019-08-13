@@ -24,3 +24,4 @@ Route::get('/news', function () {
 	
     return view('admin.adminNews.news');
 });
+Route::post('/activities','ActivitiesController@store')->name('activities.store');
