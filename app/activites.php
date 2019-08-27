@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class activites extends Model
+class Activites extends Model
 {
     protected $table = 'activities';
 }

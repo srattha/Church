@@ -3,38 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Activites;
 class ActivitiesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public $path = "assets/uploads/img";
     public function index()
     {
-        //
+        $data = Activites::get();
+       return view('admin.activities.activities',['data' => $data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(Request $request)
     {
-       return $files = $request->file('files');
+        if($request->hasFile('files')){
+
+            $files = $request->file('files');
+            foreach ($files as $key => $file) {
+                $file_name = time().'-'.str_replace(" ", "-", $file->getClientOriginalName());
+                $data['name'] = $file->getClientOriginalName();
+                $data['path'] = $this->path."/".$file_name;
+                $file->move($this->path, $file_name);
+                $result = Activites::insert($data);
+
+            }
+            return redirect()->back();
+
+        }
     }
 
     /**

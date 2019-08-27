@@ -16,12 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/activities', function () {
-    return view('admin.activities.activities');
-});
+// Route::get('/activities', function () {
+//     return view('admin.activities.activities');
+// });
 
 Route::get('/news', function () {
 	
     return view('admin.adminNews.news');
 });
+Route::get('/activities','ActivitiesController@index')->name('activities');
 Route::post('/activities','ActivitiesController@store')->name('activities.store');
