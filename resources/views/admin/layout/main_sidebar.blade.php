@@ -15,7 +15,7 @@
     <link href="../assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
-
+    <script src="../assets/js/core/jquery.min.js"></script>
     @yield('css')
     <style type="text/css">
       .sidebar[data-color="orange"]:after, .off-canvas-sidebar[data-color="orange"]:after {
@@ -136,7 +136,7 @@
   </div>
 </div>
 
-<script src="../assets/js/core/jquery.min.js"></script>
+
 <script src="../assets/js/core/popper.min.js"></script>
 <script src="../assets/js/core/bootstrap.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
